@@ -1,7 +1,7 @@
 package repository
 
 import  
-user_app "github.com/VictoriaNac/finish"
+user_app "finish"
 
 type User interface {
 	CreateUser(user user_app.RequestCreate) (string, error)

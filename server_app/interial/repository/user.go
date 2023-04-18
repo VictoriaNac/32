@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"strconv"
 
-	user_app "github.com/VictoriaNac/finish"
+	user_app "finish"
 )
 
 type UserItem struct {

@@ -1,7 +1,7 @@
 package service
 
 import (
-	user_app "github.com/VictoriaNac/finish"
+	user_app "finish"
 	"finish/server_app/interial/repository"
 )
 

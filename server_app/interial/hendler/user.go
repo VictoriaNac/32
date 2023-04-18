@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	"github.com/go-chi/chi/v5"
-	user_app "github.com/VictoriaNac/finish"
+	user_app "finish"
 	"github.com/rs/zerolog/log"
 )
 
