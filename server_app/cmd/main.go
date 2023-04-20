@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	user_app "finish/server_app"
-	"finish/server_app/interial/handler"
+	//user_app "finish"// /server_app
+	"finish/server_app/interial/hendler"
 	"finish/server_app/interial/repository"
 	"finish/server_app/interial/service"
 	"github.com/rs/zerolog"
