@@ -23,7 +23,7 @@ func main() {
 	proxy := proxyapp.NewProxy()
 
 	h := proxy
-	http.Hendle("/", h)
+	http.Hendler("/", h)
 
 	log.Info().Msg("Starting proxy")
 	server := &http.Server{

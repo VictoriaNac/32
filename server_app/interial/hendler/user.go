@@ -40,7 +40,7 @@ func (h *Hendler) CreateUser(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func (h *Handler) MakeFriends(w http.ResponseWriter, r *http.Request) {
+func (h *Hendler) MakeFriends(w http.ResponseWriter, r *http.Request) {
 	var friends user_app.RequestMakeFriend
 	content, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -66,7 +66,7 @@ func (h *Handler) MakeFriends(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
+func (h *Hendler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	var user user_app.RequestDeleteUser
 	content, err := ioutil.ReadAll(r.Body)
 	if err != nil {
@@ -92,7 +92,7 @@ func (h *Handler) DeleteUser(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func (h *Handler) GetFriends(w http.ResponseWriter, r *http.Request) {
+func (h *Hendler) GetFriends(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "user_id")
 
 	log.Info().Msg(fmt.Sprintf("GET: friends %v", string(id)))
@@ -111,7 +111,7 @@ func (h *Handler) GetFriends(w http.ResponseWriter, r *http.Request) {
 }
 
 
-func (h *Handler) UpdateAge(w http.ResponseWriter, r *http.Request) {
+func (h *Hendler) UpdateAge(w http.ResponseWriter, r *http.Request) {
 	id := chi.URLParam(r, "user_id")
 
 	log.Info().Msg(fmt.Sprintf("PUT: update age id %v", string(id)))
