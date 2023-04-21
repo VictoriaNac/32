@@ -13,7 +13,7 @@ import (
 )
 
 
-func (h *Handler) CreateUser(w http.ResponseWriter, r *http.Request) {
+func (h *Hendler) CreateUser(w http.ResponseWriter, r *http.Request) {
 	var user user_app.RequestCreate
 	content, err := ioutil.ReadAll(r.Body)
 	if err != nil {

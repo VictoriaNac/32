@@ -6,15 +6,15 @@ import (
 	
 )
 
-type Handler struct {
+type Hendler struct {
 	services *service.Service
 }
 
-func NewHandler(services *service.Service) *Handler {
-	return &Handler{services: services}
+func NewHendler(services *service.Service) *Hendler {
+	return &Hendler{services: services}
 }
 
-func (h *Handler) InitRouters() *chi.Mux {
+func (h *Hendler) InitRouters() *chi.Mux {
 	router := chi.NewRouter()
 
 	router.Post("/create", h.CreateUser)

@@ -23,12 +23,12 @@ func main() {
 	proxy := proxyapp.NewProxy()
 
 	h := proxy
-	http.Handle("/", h)
+	http.Hendle("/", h)
 
 	log.Info().Msg("Starting proxy")
 	server := &http.Server{
 		Addr:    ":" + *port,
-		Handler: h,
+		Hendler: h,
 	}
 	log.Info().Msg("Proxy started")
 	log.Err(server.ListenAndServe()).Msg("Proxy is not running")

@@ -7,7 +7,7 @@ import (
 	"os/signal"
 	"syscall"
 
-	//user_app "finish"// /server_app
+	user_app "finish"
 	"finish/server_app/interial/hendler"
 	"finish/server_app/interial/repository"
 	"finish/server_app/interial/service"
@@ -36,12 +36,12 @@ func main() {
 
 	repos := repository.NewRepository(db)
 	services := service.NewService(repos)
-	handler := handler.NewHandler(services)
+	hendler := hendler.NewHendler(services)
 
 	log.Info().Msg("Starting server")
 	server := new(user_app.Server)
 	go func() {
-		if err := server.Run(*port, handler.InitRouters()); err != nil {
+		if err := server.Run(*port, hendler.InitRouters()); err != nil {
 			log.Err(err).Msg("Server is not running")
 		}
 	}()
