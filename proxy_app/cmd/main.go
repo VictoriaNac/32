@@ -4,7 +4,7 @@ import (
 	"flag"
 	"net/http"
 	"os"
-	//proxyapp "finish/proxy_app"
+	proxyapp "finish/proxy_app"
 
 	"github.com/rs/zerolog"
 	"github.com/rs/zerolog/log"
@@ -20,15 +20,15 @@ func main() {
 	if err := initConfig(); err != nil {
 		log.Err(err).Msg("Configuration file not loaded")
 	}
-	//proxy := proxyapp.NewProxy()
+	proxy := proxyapp.NewProxy()
 
 	//h := proxy
-	//http.Handler("/" , h *proxyapp.NewProxy)
+	h :=http.Handler(proxy)//вот тут поменял
 
 	log.Info().Msg("Starting proxy")
 	server := &http.Server{
 		Addr:    ":" + *port,
-	//	Handler: h,
+		Handler: h,
 	}
 	log.Info().Msg("Proxy started")
 	log.Err(server.ListenAndServe()).Msg("Proxy is not running")
