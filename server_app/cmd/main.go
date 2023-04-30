@@ -67,7 +67,7 @@ func main() {
 
 // initConfig() initializes configuration files
 func initConfig() error {
-	viper.AddConfigPath("configs")
+	viper.AddConfigPath("./server_app/configs") //вот тут добавил конфиг
 	viper.SetConfigName("config")
 	return viper.ReadInConfig()
 }
